@@ -1,0 +1,124 @@
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width"><meta name="description" content=""><meta name="author" content=""><base href="/">');
+if ( locals.og_title!=undefined)
+{
+buf.push('<meta');
+buf.push(attrs({ terse: true, 'property':('og:title'), 'content':('g0v.tw : 中央政府總預算 ' + (locals.og_title) + '') }, {"property":true,"content":true}));
+buf.push('><meta property="og:type" content="website"><meta');
+buf.push(attrs({ terse: true, 'property':('og:url'), 'content':('http://g0v.tw/' + (locals.og_url) + '') }, {"property":true,"content":true}));
+buf.push('><meta property="og:image" content="http://g0v.tw/img/g0v.png"><meta');
+buf.push(attrs({ terse: true, 'property':('og:description'), 'content':('' + (locals.og_description) + '') }, {"property":true,"content":true}));
+buf.push('><title>g0v.tw: 中央政府總預算 ' + escape((interp = locals.og_title) == null ? '' : interp) + '</title>');
+}
+else
+{
+buf.push('<meta property="og:title" content="g0v.tw : 中央政府總預算"><meta property="og:type" content="website"><meta property="og:url" content="http://g0v.tw/"><meta property="og:image" content="http://g0v.tw/img/g0v.png"><meta property="og:description" content="零時政府 g0v.tw : 中央政府總預算 Visualization"><title>g0v.tw: 中央政府總預算</title>');
+}
+buf.push('<link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/app.css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cousine:700italic" type="text/css"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Orbitron:400,500" type="text/css"><!--[if lte IE 7]><script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script><![endif]--><!--[if lte IE 8]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-resource.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.0.1/angular-ui-router.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.1.6/d3.min.js"></script><script src="/js/vendor.js"></script><script src="/js/partials.js"></script><script src="/js/app.js"></script></head><body ng-controller="AppCtrl" ng-cloak><div id="fb-root"><script>(function(d, s, id) {\n    var js, fjs = d.getElementsByTagName(s)[0];\n    if (d.getElementById(id)) return;\n    js = d.createElement(s); js.id = id;\n    js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";\n    fjs.parentNode.insertBefore(js, fjs);\n}(document, \'script\', \'facebook-jssdk\'));</script></div><div class="wrapper"><div class="navbar site-heading"><div class="navbar-inner"><div class="container"><div class="brand"><img src="/img/logo.png" alt="Logo: G0V.tw"><span>/ 中央政府總預算</span></div><div class="nav-collapse"><div ng-include="\'/partials/nav.html\'"></div></div></div></div></div><div class="container main-content"><div ui-view></div></div><div ng-include="\'/partials/login.html\'"></div><div class="push"></div></div><script>(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\nm=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\nga(\'create\', \'UA-41326468-1\', \'g0v.tw\');</script></body></html>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div ng-controller="DebtClock" class="treemap-root"><div id="debtclock-dashboard"><div id="debtclock-total-number">現有國債：<span id="debtclock_total">{{ total.debt | unitconvert }}</span></div><div id="debtclock-total-person">（平均每人負擔：<span id="debtclock_perperson">{{ total.avg | number:0 }}</span>元）</div></div></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div id="login-holder" ng-model="loginShown" ng-controller="LoginController" ui-modal="ui-modal" class="modal fade"><a data-dismiss="modal" class="btn close">&times;</a><div class="modal-header"><h1>Login</h1></div><div class="modal-body"><div class="row-fluid"><div class="span6"><form ng-submit="submit()"><label>email</label><input type="text" ng-model="email" class="email login-inp"/><label>Password</label><input type="password" ng-model="password" class="password login-inp"/><div class="clear"></div><input type="submit" value="Login" class="btn btn-primary submit-login"/></form></div><div class="span6"><p>Login with:</p><a onclick="window.open(\'/auth/github\', \'auth\', \'height=400,width=400,modal=yes,alwaysRaised=yes\')" class="btn btn-primary login-github">Github</a><a onclick="window.open(\'/auth/twitter\', \'auth\', \'height=400,width=400,modal=yes,alwaysRaised=yes\')" class="btn btn-primary login-twitter">Twitter</a><a onclick="window.open(\'/auth/facebook\', \'auth\', \'height=400,width=400,modal=yes,alwaysRaised=yes\')" class="btn btn-primary login-facebook">facebook</a></div><div class="clearfix"></div><div ng-show="message" ng-model="message" class="alert alert-error">{{ message }}</div></div></div><div class="modal-footer"></div></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<ul class="nav"><li ng-class="getClass(\'/view2\')"><a ng-href="/view2">每日支出</a></li><li ng-class="getClass(\'/view3\')"><a ng-href="/view3">鳥瞰圖</a></li><li ng-class="getClass(\'/view4\')"><a ng-href="/budget">變化圖</a></li><li ng-class="getClass(\'/debtclock\')"><a ng-href="/debtclock">國債鐘</a></li><li class="dropdown"><a id="dLabel" role="button" data-toggle="dropdown" data-target="#" class="dropdown-toggle">單位換算<b class="caret"></b></a><ul id="unit-selector" ng-controller="UnitMapper" role="menu" aria-labelledby="dLabel" class="dropdown-menu"><li ng-repeat="item in units"><a onclick="UnitMapper.update({{$index}})">{{item[1]}}</a></li><li class="divider"></li><li><a onclick="UnitMapper.update(-1)">隨便來一個</a></li><li class="disabled"><a data-toggle="modal" onclick="$(&quot;#addunit-value-group&quot;).removeClass(&quot;error&quot;);$(&quot;#addunit-modal&quot;).modal()">我要加單位</a></li></ul><div id="addunit-modal" role="dialog" tabindex="-1" aria-labelledby="budget-addunit-label" aria-hidden="true" class="modal fade"><div class="modal-header"><button type="button" data-dismiss="modal" aria-hidden="true" class="close">x</button><h3 id="budget-addunit-label">我要加單位</h3></div><div style="text-align:center" class="modal-body"><div class="input-append"><span class="add-on">一</span><input title="量詞欄位不可空白" ng-model="addunit_quantity" type="text" placeholder="量詞,如:個 或 塊" class="input-mini"/><input title="單位欄位不可空白" ng-model="addunit_unit" type="text" placeholder="單位,如:蘋果 或 金條" class="input-medium"/><span class="add-on">等於</span><input title="價錢欄位需填數字" ng-model="addunit_value" type="text" placeholder="價錢,如:50 或 2000 (全數字)" class="span2"/><span class="add-on">元</span></div><div id="budget-addunit-result">預覽: 一{{addunit_quantity}}{{addunit_unit}} 等於 {{addunit_value}} 元</div></div><div class="modal-footer"><button data-dismiss="modal" aria-hidden="true" class="btn">取消</button><button ng-click="addunit()" class="btn btn-primary">送出</button></div></div></li></ul><ul class="nav pull-right"><li ng-class="getClass(\'/profile\')"><a ng-href="/profile">我的帳號</a></li><li><a><div data-send="false" data-href="https://facebook.com/g0v.tw" data-width="120" data-layout="button_count" data-show-faces="false" data-font="verdana" class="fb-like"></div></a></li></ul>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div ng-controller="MyCtrl1"><div id="categories" when-h-scrolled="updateblah()" class="categories"><div style="left:{{i*300+30}}px" ng-repeat="(i,result) in results" class="category"><button style="text-align:center;" class="btn">{{ result.name }}</button><ul when-scrolled="moreProducts(i)" ng-class="&quot;product&quot;+blah(i)" class="thumbnails products"><li ng-repeat="product in result.products" class="span3 product"><img src="img/htc-one.jpg"/><h3>{{ product.name }}</h3><p>{{ product.description }} qwertyuaisdfghjzkxcvbj</p></li></ul></div></div></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div class="container"><div id="dailybread" ng-controller="DailyBread"><h2 class="page-header">每日支出<small>納稅人每日支付些什麼？</small></h2><div id="preloader" style="text-align: center; padding: 100px;"><span class="txt">loading</span></div><div id="content-wrap" style="display: none;"><div id="db-topbar" class="layout-row layout-3col-15-70-15"><form class="form-inline"><label>每年繳納稅金 : <div class="input-prepend input-append"><span class="add-on">$</span><input type="text" id="db-tax" name="db-tax" ng-model="tax" class="input-small"/><a ng-click="tax= tax + 5000" class="btn btn-primary">+</a><a ng-click="tax= tax - 5000" class="btn btn-danger">-</a></div></label></form></div></div></div></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div id="treemap-root"><div id="treemap-root-inner"><div id="debitmask">2,500億</div></div><button id="treemap-backbtn" class="btn"><i class="icon-big-back"></i></button><div id="budget-detail"><div id="budget-detail-inner"><div id="budget-detail-info"><h3><i style="margin-top:2px" class="icon-big-info-sign"></i><span id="budget-detail-depname-field">教育部</span></h3><div id="budget-detail-amount"><div id="budget-detail-amount-field1"><span id="budget-detail-amount-field1-value">2,100億</span><span id="budget-detail-amount-field1-unit">元</span></div>&#x0028;即為<span id="budget-detail-amount-field2">2,100億元</span>)</div><div id="budget-detail-category">屬於<span id="budget-detail-category-field">教育支出</span>項目</div></div><hr/><div id="budget-tagger"><div class="input-append"><input ng-model="tagname" size="13" type="text" placeholder="例如: 林益世" class="span2"/><button type="button" ng-click="addtag()" class="btn">標記相關人士</button></div><div id="budget-tags"><span ng-repeat="tag in tags" class="badge budget-tag"> \n{{tag}}  </span></div></div><hr/><div id="budget-vote"><div id="budget-vote-label"><span class="label">透過按一下表達你對於此預算的看法！</span></div><div id="BudgetItem" class="btn-toolbar"><div class="btn-group"><button ng-click="like()" class="btn vote-btn"><span id="vote1">{{nlikes || 0}} 人</span><br/><i class="icon-big-plus"></i><br/>希望追加</button><button ng-click="confuse()" class="btn vote-btn"><span id="vote2">{{nconfuses || 0}} 人</span><br/><i class="icon-big-question-sign"> </i><br/>表示不懂</button><button ng-click="hate()" class="btn vote-btn"><span id="vote3">{{nhates || 0}} 人</span><br/><i class="icon-big-minus"></i><br/>建議減少</button><button ng-click="cut()" class="btn vote-btn btn-danger"><span id="vote4">{{ncuts || 0}} 人</span><br/><i class="icon-big-ban-circle"></i><br/>要求刪除</button></div></div></div></div></div><script>setTimeout(function() {\n    initTreeMap();\n}, 500);</script></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div class="treemap-root"><div data-toggle="buttons-radio" class="btn-group"><a class="btn default active">Default</a><a class="btn bycat">政事別</a><a class="btn bytop">主管單位</a></div><div id="bubble-circle-size" class="btn">圖例</div><div id="bubble-info"><div id="bubble-info-inner"><i id="bubble-info-close" style="margin-top:-5px" class="icon-big-close"></i><div id="bubble-info-left"><div id="bubble-detail-info"><div id="bubble-detail-names"><i style="margin-top:-9px" class="icon-big-info-sign"></i><span id="bubble-detail-name">???</span>(<span id="bubble-detail-depname">???</span>)</div><div id="bubble-detail-amount"><span id="bubble-detail-amount-value">???</span><span id="bubble-detail-amount-quantifier"></span><span id="bubble-detail-amount-unit">元</span>(<span id="bubble-detail-amount-change">???</span>&nbsp;)<br/>( 即為<span id="bubble-detail-amount-alt">???</span>&nbsp;)<br/><div id="bubble-detail-amount-link"><span>連結到此項 :</span><a id="bubble-detail-link" href="view4">http://g0v.tw/view4</a></div></div></div><hr/><div id="bubble-detail-change-bar"></div><hr/><div id="budget-tagger"><div class="input-append"><input ng-model="tagname" size="13" type="text" placeholder="例如: 林益世" class="span2"/><button type="button" ng-click="addtag()" class="btn">標記相關人士</button></div><div id="budget-tags"><span ng-repeat="tag in tags" class="badge budget-tag"> \n{{tag}}  </span></div></div><hr/><div id="budget-vote"><div id="budget-vote-label"><span class="label">透過按一下表達你對於此預算的看法！</span></div><div id="BudgetItem" class="btn-toolbar"><div class="btn-group"><button ng-click="like()" class="btn vote-btn"><span id="vote1">{{nlikes || 0}} 人</span><br/><i class="icon-big-plus"></i><br/>希望追加</button><button ng-click="confuse()" class="btn vote-btn"><span id="vote2">{{nconfuses || 0}} 人</span><br/><i class="icon-big-question-sign"> </i><br/>表示不懂</button><button ng-click="hate()" class="btn vote-btn"><span id="vote3">{{nhates || 0}} 人</span><br/><i class="icon-big-minus"></i><br/>建議減少</button><button ng-click="cut()" class="btn vote-btn btn-danger"><span id="vote4">{{ncuts || 0}} 人</span><br/><i class="icon-big-ban-circle"></i><br/>要求刪除</button></div></div></div></div><div id="bubble-info-right"></div></div></div><div id="bubble-chart"></div><script>test_bubble();</script><svg><g><defs><radialGradient id="MyGradient" gradientUnits="userSpaceOnUse" cx="500" cy="350" r="500" fx="400" fy="200"><stop offset="0%" stop-color="red"></stop><stop offset="50%" stop-color="blue"></stop><stop offset="100%" stop-color="red"></stop></radialGradient></defs></g></svg></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div ng-controller="Profile"><h1>Hi, {{name}}</h1></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div id="budget-tagger"><div class="input-append"><input ng-model="tagname" size="13" type="text" placeholder="例如: 林益世" class="span2"/><button type="button" ng-click="addtag()" class="btn">標記相關人士</button></div><div id="budget-tags"><span ng-repeat="tag in tags" class="badge budget-tag"> \n{{tag}}  </span></div></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div id="budget-vote"><div id="budget-vote-label"><span class="label">透過按一下表達你對於此預算的看法！</span></div><div id="BudgetItem" class="btn-toolbar"><div class="btn-group"><button ng-click="like()" class="btn vote-btn"><span id="vote1">{{nlikes || 0}} 人</span><br/><i class="icon-big-plus"></i><br/>希望追加</button><button ng-click="confuse()" class="btn vote-btn"><span id="vote2">{{nconfuses || 0}} 人</span><br/><i class="icon-big-question-sign"> </i><br/>表示不懂</button><button ng-click="hate()" class="btn vote-btn"><span id="vote3">{{nhates || 0}} 人</span><br/><i class="icon-big-minus"></i><br/>建議減少</button><button ng-click="cut()" class="btn vote-btn btn-danger"><span id="vote4">{{ncuts || 0}} 人</span><br/><i class="icon-big-ban-circle"></i><br/>要求刪除</button></div></div></div>');
+}
+return buf.join("");
+};module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<!--{{keywords}} are queries seperate by comma, ex &q=交通及運輸設,總統府, which should be valid url encoding--><iframe frameborder="0" width="300" height="250" marginwidth="0" marginheight="0" src="http://www.google.com/uds/modules/elements/newsshow/iframe.html?ned=tw&amp;hl=zh-TW&amp;rsz=large&amp;format=300x250&amp;q={{keywords}}"></iframe>');
+}
+return buf.join("");
+};
