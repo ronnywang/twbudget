@@ -315,6 +315,7 @@ class BubbleChart
     content += "<span class='name'>Dep:</span><span class='value'> #{data.data.depname}/ #{data.data.depcat} </span><br/>"
     content += "<span class='name'>change:</span><span class='change'> #{change data.change}</span>"
     content += "<div id='bubble-detail-change-bar2'></div>"
+    content += "<span class='name'>note:</span><span class='value'>#{data.data.note}</span>"
     $('#bubble-detail-name').text(data.data.name)
     $('#bubble-detail-depname').text(data.data.depname+'/'+data.data.depcat)
     $('#bubble-detail-amount-value').text(UnitMapper.convert data.value,void,false)
