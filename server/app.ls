@@ -13,8 +13,8 @@ console.log "Please connect to: http://#{
 <- (require \zappajs) port, host
 @BASEPATH = basepath
 
-@mongoose = require \mongoose
-@mongoose.connect json?MONGOLAB_URI ? process.env?MONGOLAB_URI ? \mongodb://localhost/ydh
+#@mongoose = require \mongoose
+#@mongoose.connect json?MONGOLAB_URI ? process.env?MONGOLAB_URI ? \mongodb://localhost/ydh
 @config = json ? {}
 @config.cookieSecret ?= 'its-secret'
 @config.authproviders ?= {}
