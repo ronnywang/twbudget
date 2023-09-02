@@ -16,12 +16,8 @@
   basepath = replace$.call((argv != null ? argv.basepath : void 8) || "", /\/$/, '');
   console.log("Please connect to: http://" + (host === '0.0.0.0' ? require('os').hostname() : host) + ":" + port + "/");
   require('zappajs')(port, host, function(){
-    var ref$, ref1$;
+    var ref$;
     this.BASEPATH = basepath;
-    this.mongoose = require('mongoose');
-    this.mongoose.connect((ref$ = json != null ? json.MONGOLAB_URI : void 8) != null
-      ? ref$
-      : (ref$ = (ref1$ = process.env) != null ? ref1$.MONGOLAB_URI : void 8) != null ? ref$ : 'mongodb://localhost/ydh');
     this.config = json != null
       ? json
       : {};

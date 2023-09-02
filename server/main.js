@@ -73,17 +73,6 @@
         });
       }
     });
-    this.get({
-      '/1/budgetitems/:key': function(){
-        var this$ = this;
-        return BudgetItem.findOne({
-          key: this.params.key
-        }, 'key nhates nconfuses nlikes ncuts tags').exec(function(err, item){
-          console.log(this$.params.key, item);
-          return this$.response.send(item);
-        });
-      }
-    });
     this.post({
       '/1/budgetitems/:key/tags/:tag': function(){
         var key, tag, done, this$ = this;
