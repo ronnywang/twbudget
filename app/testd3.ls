@@ -10,10 +10,10 @@ dataforyear = (year, cb) ->
         .map json
     cb {key: \root, values: json}
 
-dataOverYears = (y2022, y2023) ->
-    for code, entry of y2023
-        entry.byYear = { 2023: +entry.amount, 2022: +y2022[code]?amount }
-        entry.change = (entry.byYear.2023 - entry.byYear.2022) / entry.byYear.2022 if entry.byYear.2022
+dataOverYears = (y2023, y2024) ->
+    for code, entry of y2024
+        entry.byYear = { 2024: +entry.amount, 2023: +y2023[code]?amount }
+        entry.change = (entry.byYear.2024 - entry.byYear.2023) / entry.byYear.2023 if entry.byYear.2023
         entry.amount = 0 if entry.amount is \NaN
         entry
 
@@ -39,13 +39,14 @@ init_year_data = (cb) ->
     by_year.2021 <- mapforyear 2021
     by_year.2022 <- mapforyear 2022
     by_year.2023 <- mapforyear 2023
+    by_year.2024 <- mapforyear 2024
 
     cb by_year
 
 bar_chart = (id,mode) ->
     by_year <- init_year_data!
 
-    data = [{year, amount: +((by_year[year] && by_year[year][id])?amount ? 0)} for year in [2007 to 2023]]
+    data = [{year, amount: +((by_year[year] && by_year[year][id])?amount ? 0)} for year in [2007 to 2024]]
     margin = {top: 10, right: 30, bottom: 20, left: 90}
     width = 360 - margin.left - margin.right
     height = 140 - margin.top - margin.bottom
@@ -101,9 +102,9 @@ test_bubble = ->
       ..start!
       ..display_group_all!
 
-  y2022 <- mapforyear 2022
   y2023 <- mapforyear 2023
-  data = dataOverYears y2022, y2023
+  y2024 <- mapforyear 2024
+  data = dataOverYears y2023, y2024
   data .= sort (a, b) -> b.amount - a.amount
   #data .= slice 0, 600
   render_vis data
@@ -133,9 +134,9 @@ testd3 = ->
         .style \width  width + \px
         .style \height height + \px
 
-    y2022 <- mapforyear 2022
     y2023 <- mapforyear 2023
-    data = dataOverYears y2022, y2023
+    y2024 <- mapforyear 2024
+    data = dataOverYears y2023, y2024
     json = d3.nest!
         .key -> it.cat
         .key -> it.depname
@@ -150,15 +151,15 @@ testd3 = ->
         .call cell
         .text -> if it.values then null else it.name
 
-    d3.select(\#y2023).on \click ->
+    d3.select(\#y2024).on \click ->
         div.selectAll("div")
-            .data treemap.value -> it.byYear?2023
+            .data treemap.value -> it.byYear?2024
         .transition()
             .duration(1500)
             .call(cell)
-    d3.select(\#y2022).on \click ->
+    d3.select(\#y2023).on \click ->
         div.selectAll("div")
-            .data treemap.value -> it.byYear?2022
+            .data treemap.value -> it.byYear?2023
         .transition()
             .duration(1500)
             .call(cell)
